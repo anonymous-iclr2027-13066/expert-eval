@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SREV-Mol · Expert verification</title><style>
+:root{--bg:#fbfaf8;--fg:#201d1a;--mut:#6b655d;--line:#e2ddd5;--card:#fff;--accent:#8a5a2b;--warn:#9a3412;--chip:#f2eee7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:32px 16px 96px}
+.wrap.wide{max-width:min(98vw,2200px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:16px;max-width:1320px}
+.split{display:grid;grid-template-columns:minmax(260px,1fr) minmax(320px,1.4fr);gap:18px;align-items:start;max-width:1320px}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px;position:relative}
+a.lang{position:absolute;right:0;top:0;font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 13px;background:var(--card);color:var(--accent);font-weight:600}
+a.lang:hover{border-color:var(--accent)}
+h1{font-size:22px;margin:0 0 4px}
+header p{margin:0;color:var(--mut);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:20px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{background:var(--chip);border-radius:999px;padding:2px 10px;font-size:12px;color:var(--mut)}
+h2{font-size:15px;margin:22px 0 8px;letter-spacing:.02em;text-transform:uppercase;color:var(--mut)}
+h2:first-child{margin-top:0}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;word-break:break-all;background:var(--chip);padding:10px 12px;border-radius:6px}
+.desc{font-size:16px;background:#fffdf8;border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 6px 6px 0}
+.figs{display:flex;gap:16px;flex-wrap:wrap}
+.fig{border:1px solid var(--line);border-radius:8px;padding:8px;background:#fff}
+.fig figcaption{font-size:12px;color:var(--mut);text-align:center;margin-top:4px}
+svg{display:block;max-width:100%;height:auto}
+.fig svg{width:100%;height:auto}
+details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:14px 0;background:#fcfbf9}
+a{color:var(--accent)}
+summary{cursor:pointer;font-size:13px;color:var(--accent);font-weight:600}
+details table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+details td,details th{border-bottom:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+details th{color:var(--mut);font-weight:600;width:170px}
+.q{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}
+.q>label.lead{display:block;font-weight:600;margin-bottom:2px}
+.hint{color:var(--mut);font-size:13px;margin:0 0 10px}
+.opts label{display:block;padding:5px 0;cursor:pointer}
+.opts input{margin-right:8px}
+textarea,input[type=text]{width:100%;border:1px solid var(--line);border-radius:6px;padding:9px 11px;font:inherit;background:#fff}
+textarea{min-height:70px;resize:vertical}
+.err{color:var(--warn);font-size:13px}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
+.tbl th{color:var(--mut);font-weight:600}
+.ok{color:#15803d}.bad{color:var(--warn)}
+.cand{border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:10px;background:#fcfbf9}
+.cand h3{margin:0 0 8px;font-size:14px}
+.cand .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.bar{position:sticky;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px 16px;margin:0 -16px -96px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.statline{color:var(--mut);font-size:13px}
+#rater input{max-width:420px}
+button{background:var(--accent);color:#fff;border:0;border-radius:6px;padding:9px 20px;font:inherit;cursor:pointer}
+.note{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:18px 20px;font-size:16px;line-height:1.8;margin-bottom:22px}
+.note b{font-weight:700}
+.note u{text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--accent)}
+.note p{margin:0 0 12px}.note p:last-child{margin-bottom:0}
+.swatch{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:baseline;margin-right:4px}
+.revtext{background:var(--chip);padding:14px 16px;border-radius:8px;white-space:pre-wrap;
+         font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.75}
+.rparts{margin-top:12px}
+.rpart{margin:0 0 16px;padding-left:12px;border-left:2px solid var(--line)}
+.rpart:last-child{margin-bottom:0}
+.rnote{font-size:13px;color:var(--mut);line-height:1.6;margin-bottom:6px}
+.rseg{margin:0;white-space:pre-wrap;word-break:break-word;
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.75}
+.legend{border:1px solid var(--line);border-radius:8px;background:var(--chip);
+        padding:12px 16px;margin:6px 0 16px;font-size:14px;line-height:1.7}
+.legend>b{display:block;font-size:13px;color:var(--mut);margin-bottom:6px;
+          letter-spacing:.02em;text-transform:uppercase}
+.lgrow{display:flex;gap:20px;flex-wrap:wrap}
+.lg{display:inline-flex;align-items:center;gap:7px}
+.sw{width:18px;height:10px;border-radius:3px;display:inline-block;flex:none}
+.sw.band{background:currentColor;opacity:.22;height:18px}
+.sw.cur{width:0;height:18px;border-left:2px dashed currentColor;border-radius:0;opacity:.8}
+.sw.std{width:34px;height:10px;background:#8a8a8a;opacity:.45;position:relative}
+.sw.std::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;
+               margin:-5px 0 0 -5px;border-radius:50%;background:#8a8a8a;
+               box-shadow:0 0 0 2px var(--chip)}
+table.editvz{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.editvz th,.editvz td{padding:2px 7px;border-bottom:1px solid var(--line);
+                      text-align:right;white-space:nowrap}
+.editvz thead th{color:var(--mut);font-weight:600;font-size:12px;padding-bottom:5px;vertical-align:bottom}
+.editvz thead .sub{display:block;font-weight:400;font-size:11px;opacity:.85}
+.editvz tbody th{text-align:left;font-weight:600}
+.editvz thead th:nth-child(2){text-align:center}
+.editvz td.trk{width:46%;padding:0 7px}
+.editvz td.trk svg{width:100%;height:22px;display:block}
+.editvz td.vd{text-align:left;font-weight:600}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:10px 18px}
+.panel{margin:0;color:var(--fg)}
+@media (prefers-color-scheme:dark){:root{--bg:#17150f;--fg:#ece7de;--mut:#9c958a;--line:#332e26;--card:#1e1b15;--accent:#d8a26a;--warn:#f87171;--chip:#252119}
+.desc{background:#231f18}.cand,details{background:#1b1812}.fig{background:#1e1b15}
+textarea,input[type=text]{background:#17150f;color:var(--fg)}
+.note{background:#241c10;border-color:#4a3a1e}
+svg{filter:invert(.92) hue-rotate(180deg)}
+svg.viz{filter:none}}
+</style></head>
+<body><div class="wrap">
+<header><a class="lang" href="../index.html">한국어</a><h1>SREV-Mol · Expert verification</h1><p>Description check · description writing · reasoning-format review</p></header>
+<form id="f" autocomplete="off" onsubmit="return false">
+
+<div class="note"><p><b>Thank you.</b> This is a review, from an expert's point of view, of the structural constraints in the SREV-Mol benchmark and of the reasoning the agent uses when it selects a molecular edit.</p><p><b>Which form to open.</b> Of the three kinds below, please fill in only <u>the form we asked you to take</u>. Form B is split into 5 sheets of the same kind and each writer takes one, so please fill in <u>only the sheet number you were given</u>. (For example, if you were asked to take “Form B sheet 3”, fill in sheet 3 only.)</p><p><b>How to submit.</b> What you type is saved automatically <u>in this browser</u> as you go, so you may close it and continue later from the same browser. <b>Autosave alone does not send your response</b>, so when you are done, pressing <u>“Submit response”</u> at the bottom of the page sends your response to us (the same content is also downloaded as a JSON file).</p><p><b>Note.</b> Autosave does not work in a private/incognito window. If you plan to fill the form in over several sittings, please open it in a normal window.</p></div><section class="card"><h2 style="margin:0 0 6px;text-transform:none;font-size:16px;color:var(--fg)"><a href="form_a_description.html">Form A · Quality of the structural description</a></h2><p class="hint" style="margin:0">See a substructure next to its natural-language description and judge whether the description describes that structure correctly. 20 items.</p></section><section class="card"><h2 style="margin:0 0 6px;text-transform:none;font-size:16px;color:var(--fg)"><a href="form_b_authoring_01.html">Form B · Writing structural descriptions · Sheet 1 / 5</a></h2><p class="hint" style="margin:0">Look at a substructure and write the natural-language description of it yourself. 20 items.</p></section><section class="card"><h2 style="margin:0 0 6px;text-transform:none;font-size:16px;color:var(--fg)"><a href="form_b_authoring_02.html">Form B · Writing structural descriptions · Sheet 2 / 5</a></h2><p class="hint" style="margin:0">Look at a substructure and write the natural-language description of it yourself. 20 items.</p></section><section class="card"><h2 style="margin:0 0 6px;text-transform:none;font-size:16px;color:var(--fg)"><a href="form_b_authoring_03.html">Form B · Writing structural descriptions · Sheet 3 / 5</a></h2><p class="hint" style="margin:0">Look at a substructure and write the natural-language description of it yourself. 20 items.</p></section><section class="card"><h2 style="margin:0 0 6px;text-transform:none;font-size:16px;color:var(--fg)"><a href="form_b_authoring_04.html">Form B · Writing structural descriptions · Sheet 4 / 5</a></h2><p class="hint" style="margin:0">Look at a substructure and write the natural-language description of it yourself. 20 items.</p></section><section class="card"><h2 style="margin:0 0 6px;text-transform:none;font-size:16px;color:var(--fg)"><a href="form_b_authoring_05.html">Form B · Writing structural descriptions · Sheet 5 / 5</a></h2><p class="hint" style="margin:0">Look at a substructure and write the natural-language description of it yourself. 20 items.</p></section><section class="card"><h2 style="margin:0 0 6px;text-transform:none;font-size:16px;color:var(--fg)"><a href="form_c_review.html">Form C · Soundness of the Review reasoning format</a></h2><p class="hint" style="margin:0">Read the reasoning the agent uses to choose one of the edit candidates and judge whether that format is chemically sound. 2 items.</p></section>
+</form>
+<div class="bar">
+  <span id="stat" class="statline"></span>
+  <button type="button" id="dl">Submit response</button>
+</div>
+</div></body></html>

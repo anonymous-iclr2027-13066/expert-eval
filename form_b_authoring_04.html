@@ -11,7 +11,9 @@ body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,B
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:16px;max-width:1320px}
 .split{display:grid;grid-template-columns:minmax(260px,1fr) minmax(320px,1.4fr);gap:18px;align-items:start;max-width:1320px}
 @media(max-width:860px){.split{grid-template-columns:1fr}}
-header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px}
+header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px;position:relative}
+a.lang{position:absolute;right:0;top:0;font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 13px;background:var(--card);color:var(--accent);font-weight:600}
+a.lang:hover{border-color:var(--accent)}
 h1{font-size:22px;margin:0 0 4px}
 header p{margin:0;color:var(--mut);font-size:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:20px}
@@ -97,32 +99,18 @@ svg{filter:invert(.92) hue-rotate(180deg)}
 svg.viz{filter:none}}
 </style></head>
 <body><div class="wrap">
-<header><h1>Form B · 전문가 구조 서술 작성 · 시트 4 / 5</h1><p>주어진 부분 구조에 대한 human-authored description · 20문항</p></header>
+<header><a class="lang" href="en/form_b_authoring_04.html">English</a><h1>Form B · 전문가 구조 서술 작성 · 시트 4 / 5</h1><p>주어진 부분 구조에 대한 human-authored description · 20문항</p></header>
 <form id="f" autocomplete="off" onsubmit="return false">
 
 <section class="card" id="rater">
   <h2>작성 안내</h2>
-  <p class="hint" style="font-size:14px;line-height:1.75">
-    입력하신 내용은 쓰는 즉시 <u>이 브라우저에</u> 자동 저장되므로, 중간에 창을 닫으셨다가
-    같은 브라우저에서 다시 여시면 이어서 작성하실 수 있습니다.
-    <b>다만 자동 저장만으로는 응답이 전달되지 않습니다.</b> 작성을 마치시면 화면 맨 아래 <b>“응답 제출”</b> 버튼을 눌러 주세요. 그래야 응답이 담당자에게 전달됩니다. (같은 내용이 JSON 파일로도 내려받아집니다.)
-    한 번에 다 못 쓰시면 중간에 눌러 두셔도 되고, 마지막에 다시 누르시면 그 내용으로 갱신됩니다.</p>
-  <label class="lead" style="display:block;font-weight:600;margin:14px 0 2px">평가자</label>
-  <p class="hint">누구의 응답인지 구분하는 데만 씁니다. 이름 전체 대신
-    이니셜이나 소속만 적으셔도 됩니다.</p>
+  <p class="hint" style="font-size:14px;line-height:1.75">입력하신 내용은 쓰는 즉시 <u>이 브라우저에</u> 자동 저장되므로, 중간에 창을 닫으셨다가 같은 브라우저에서 다시 여시면 이어서 작성하실 수 있습니다. <b>다만 자동 저장만으로는 응답이 전달되지 않습니다.</b> 작성을 마치시면 화면 맨 아래 <b>“응답 제출”</b> 버튼을 눌러 주세요. 그래야 응답이 담당자에게 전달됩니다. (같은 내용이 JSON 파일로도 내려받아집니다.) 한 번에 다 못 쓰시면 중간에 눌러 두셔도 되고, 마지막에 다시 누르시면 그 내용으로 갱신됩니다.</p>
+  <label class="lead" style="display:block;font-weight:600;margin:14px 0 2px">
+    평가자</label>
+  <p class="hint">누구의 응답인지 구분하는 데만 씁니다. 이름 전체 대신 이니셜이나 소속만 적으셔도 됩니다.</p>
   <input type="text" name="_rater" placeholder="예) K. L. / 유기합성 전공">
 </section>
-
-<div class="note">
-<p><b>무엇을 하나요.</b> 아래에 부분 구조가 SMARTS와 그림으로 주어집니다.
-이 부분 구조를 <u>가장 잘 설명하는 자연어 서술</u>을 작성해 주세요.
-구조를 새로 설계하거나 SMILES/SMARTS를 직접 쓰실 필요는 없습니다.</p>
-<p><b>참고 정보.</b> 작성에 필요하시면 접힌 항목을 펼쳐 보실 수 있습니다.
-<u>최종 분자 예시</u>(이 부분 구조를 포함하는 분자의 한 예)와
-<u>구조 분해 정보</u>(부분 구조에서 추출한 고리계 &middot; 연결 관계 &middot; 작용기 등)가
-들어 있습니다. 서술 대상은 어디까지나 부분 구조입니다.</p>
-<p><b>평가 범위.</b> 구조 제약은 분자 전체가 아니라 부분 구조에 대해서만 주어집니다. 따라서 모든 판단은 <u>주어진 부분 구조만</u>을 기준으로 해 주세요. 부분 구조에는 없고 최종 분자에만 있는 요소는 서술에 없어도 누락이 아닙니다.</p>
-</div>
+<div class="note"><p><b>무엇을 하나요.</b> 아래에 부분 구조가 SMARTS와 그림으로 주어집니다. 이 부분 구조를 <u>가장 잘 설명하는 자연어 서술</u>을 작성해 주세요. 구조를 새로 설계하거나 SMILES/SMARTS를 직접 쓰실 필요는 없습니다.</p><p><b>참고 정보.</b> 작성에 필요하시면 접힌 항목을 펼쳐 보실 수 있습니다. <u>최종 분자 예시</u>(이 부분 구조를 포함하는 분자의 한 예)와 <u>구조 분해 정보</u>(부분 구조에서 추출한 고리계 &middot; 연결 관계 &middot; 작용기 등)가 들어 있습니다. 서술 대상은 어디까지나 부분 구조입니다.</p><p><b>평가 범위.</b> 구조 제약은 분자 전체가 아니라 부분 구조에 대해서만 주어집니다. 따라서 모든 판단은 <u>주어진 부분 구조만</u>을 기준으로 해 주세요. 부분 구조에는 없고 최종 분자에만 있는 요소는 서술에 없어도 누락이 아닙니다.</p></div>
 <section class="card">
   <div class="meta"><span class="chip">문항 1 / 20</span><span class="chip">bench_scaffold__generation_327</span><span class="chip">bench_generation</span><span class="chip">ring systems: 1</span></div>
 
@@ -385,10 +373,7 @@ L 160.5 75.3
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_327__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -703,10 +688,7 @@ Q 93.8 82.6, 95.6 82.6
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_410__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -1006,10 +988,7 @@ Q 201.3 232.1, 203.8 232.1
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_536__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -1261,10 +1240,7 @@ Q 243.3 141.9, 245.2 141.9
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_218__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -1647,10 +1623,7 @@ L 303.3 160.9
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_547__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -1979,10 +1952,7 @@ L 168.6 78.0
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__opt__lead_optimization__antiviral__lead_profiling__3537__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -2320,10 +2290,7 @@ L 317.2 131.4
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_195__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -2550,10 +2517,7 @@ L 165.6 50.9
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__opt__hit_to_lead__nematicide__fragment_merging__9749__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -3023,10 +2987,7 @@ L 69.6 47.1
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="pipeline_scaffold__generation_542__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -3400,10 +3361,7 @@ L 243.7 174.4
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_569__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -3720,10 +3678,7 @@ L 64.5 89.8
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_222__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -4123,10 +4078,7 @@ L 315.1 87.4
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_325__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -4698,10 +4650,7 @@ L 113.5 106.6
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_490__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -5034,10 +4983,7 @@ L 297.3 192.7
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_69__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -5322,10 +5268,7 @@ Q 76.0 185.9, 77.4 185.9
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__opt__hit_to_lead__antiviral__lead_profiling__4460__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -5811,10 +5754,7 @@ L 99.8 113.2
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="pipeline_scaffold__generation_807__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -6221,10 +6161,7 @@ L 109.2 15.6
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__opt__lead_optimization__oral_drug__lead_profiling__9031__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -6780,10 +6717,7 @@ Q 209.0 111.8, 210.3 111.8
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="bench_scaffold__generation_535__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -7253,10 +7187,7 @@ L 57.9 83.3
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="pipeline_scaffold__generation_705__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -8017,10 +7948,7 @@ L 257.2 57.5
 
   <div class="q">
     <label class="lead">(a) 구조 서술</label>
-    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요.
-      SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot;
-      치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고,
-      목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
+    <p class="hint">위 부분 구조를 <b>가장 잘 설명할 수 있도록</b> 묘사해 주세요. SMILES/SMARTS 문법을 그대로 쓰지 마시고, 고리 이름 &middot; 연결 방식 &middot; 치환 위치를 문장으로 기술해 주세요. <b>한 문단으로</b> 작성해 주시고, 목록이나 줄바꿈으로 나누지 말아 주세요. 이 글이 그대로 모델 입력이 됩니다.</p>
     <textarea name="pipeline_scaffold__generation_993__description" style="min-height:120px"
       placeholder="예) A pyrazolo[1,5-a]pyrimidine core is substituted at C-3 with a carboxamide whose nitrogen bears a cyclopropyl group. The 7-position carries a para-fluorophenyl ring."></textarea>
   </div>
@@ -8044,7 +7972,7 @@ L 257.2 57.5
 <script>
 (function () {
   var FORM = "form_b_04", TOTAL = 20, KEY_SUFFIX = "__description";
-  var ENDPOINT = "https://script.google.com/macros/s/AKfycbyDbys3WmQYGVpLPmcaEe5FdZWQHtZFt-HYFrjTgyGrEIAKeVh94fC7GedrlFoBIRTG/exec", BUILD = "2026-11-09";
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbyDbys3WmQYGVpLPmcaEe5FdZWQHtZFt-HYFrjTgyGrEIAKeVh94fC7GedrlFoBIRTG/exec", BUILD = "2026-11-09", LANG = "ko", MSG = {"answered": "응답", "autosaved": "이 브라우저에 자동 저장됨", "pending": "자동 저장 대기", "downloaded": "파일을 내려받았습니다", "sending": " · 전송 중…", "ok": "제출 완료 · 파일도 내려받았습니다", "blind": "전송했습니다 (수신 확인은 불가) · 내려받은 파일도 함께 보내주시면 확실합니다", "fail": "전송 실패 · 내려받은 JSON 파일을 담당자에게 보내주세요", "nolink": "파일을 내려받았습니다 · 이 파일을 담당자에게 보내주세요"};
   var KEY = 'mda-he:' + FORM;
   var form = document.getElementById('f');
   var stat = document.getElementById('stat');
@@ -8083,8 +8011,9 @@ L 257.2 57.5
   }
   function show(saved) {
     if (pinned) return;      // keep a submit result on screen until the next edit
-    stat.textContent = '응답 ' + done(collect()) + ' / ' + TOTAL + '\u2002\u00b7\u2002'
-      + (saved ? '이 브라우저에 자동 저장됨 ' + stamp() : '자동 저장 대기');
+    stat.textContent = MSG.answered + ' ' + done(collect()) + ' / ' + TOTAL
+      + '\u2002\u00b7\u2002'
+      + (saved ? MSG.autosaved + ' ' + stamp() : MSG.pending);
   }
 
   try {
@@ -8122,7 +8051,7 @@ L 257.2 57.5
   document.getElementById('dl').addEventListener('click', function () {
     var a = collect();
     var payload = {
-      form: FORM, build: BUILD, rater: a._rater || '',
+      form: FORM, build: BUILD, lang: LANG, rater: a._rater || '',
       saved_at: new Date().toISOString(),
       answered: done(a), total: TOTAL, answers: a
     };
@@ -8137,15 +8066,8 @@ L 257.2 57.5
     clearTimeout(t);
     try { localStorage.setItem(KEY, JSON.stringify(a)); } catch (e) { /* ignore */ }
     pinned = true;
-    stat.textContent = '파일을 내려받았습니다' + (ENDPOINT ? ' · 전송 중…' : '');
-    send(payload, function (res) {
-      stat.textContent = {
-        ok: '제출 완료 · 파일도 내려받았습니다',
-        blind: '전송했습니다 (수신 확인은 불가) · 내려받은 파일도 함께 보내주시면 확실합니다',
-        fail: '전송 실패 · 내려받은 JSON 파일을 담당자에게 보내주세요',
-        nolink: '파일을 내려받았습니다 · 이 파일을 담당자에게 보내주세요'
-      }[res];
-    });
+    stat.textContent = MSG.downloaded + (ENDPOINT ? MSG.sending : '');
+    send(payload, function (res) { stat.textContent = MSG[res]; });
   });
 
   show(false);
